@@ -1,0 +1,69 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Base */
+:root {
+  font-family: system-ui, Roboto, Arial, sans-serif;
+  --color-blue: #2596be;
+  --color-blue-darker: #1b6b88;
+  --color-orange: #f0b429;
+  --color-gray: #e2e8f0;
+  --base-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Books cards */
+/* .books { */
+/*   display: grid; */
+/*   grid-template-rows: auto 1fr; */
+/* } */
+
+.books-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.book {
+  padding: 30px 26px 30px 22px;
+  /* border-left: solid 5px var(--color-orange); */
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+
