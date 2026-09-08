@@ -53,4 +53,13 @@ addBookToLibrary("Volta ao Mundo em 80 Dias", "Julio Verne", 450);
 
 const booksContainer = document.querySelector(".books-container");
 displayBooks(myLibrary, booksContainer);
-// DOM manipulation
+
+// New book modal
+const newBookBtn = document.getElementById("new-book-btn");
+const newBook = document.getElementById("new-book-modal");
+const confirmBtn = document.getElementById("confirm-form");
+const cancelBtn = document.getElementById("cancel-form");
+
+newBookBtn.addEventListener("click", () => {
+  newBook.showModal();
+});

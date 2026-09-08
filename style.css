@@ -39,13 +39,14 @@ body {
   justify-content: center;
 }
 
+/* Header */
+.book-modal:modal {
+  background-color: beige;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+}
 
 /* Books cards */
-/* .books { */
-/*   display: grid; */
-/*   grid-template-rows: auto 1fr; */
-/* } */
-
 .books-container {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -65,5 +66,4 @@ body {
   font-weight: 600;
   margin-bottom: 5px;
 }
-
 

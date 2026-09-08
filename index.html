@@ -8,6 +8,31 @@
     <title>Library App</title>
   </head>
   <body>
+    <header>
+      <button id="new-book-btn">New Book</button>
+      <dialog id="new-book-modal">
+        <form>
+          <legend>Add a New Book!</legend>
+          <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="book_title" />
+          </div>
+          <div>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="book_author" />
+          </div>
+          <div>
+            <label for="pages">N. pages:</label>
+            <textarea type="number" id="msg" name="book_pages"></textarea>
+          </div>
+
+          <div class="button">
+            <button id="confirm-form" type="submit">Confirm</button>
+            <button id="cancel-form" formmethod="dialog">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+    </header>
     <section class="books">
       <p class="books-header">Your Books</p>
       <div class="books-container"></div>
