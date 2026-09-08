@@ -9,26 +9,28 @@
   </head>
   <body>
     <header>
-      <button id="new-book-btn">New Book</button>
-      <dialog id="new-book-modal">
+      <h1>Odin Library</h1>
+      <button id="new-book">New Book</button>
+      <dialog class="dialog modal">
         <form>
-          <legend>Add a New Book!</legend>
-          <div>
+          <p>Add a New Book</p>
+          <p>
             <label for="title">Title:</label>
             <input type="text" id="title" name="book_title" />
-          </div>
-          <div>
+          </p>
+
+          <p>
             <label for="author">Author:</label>
             <input type="text" id="author" name="book_author" />
-          </div>
-          <div>
-            <label for="pages">N. pages:</label>
-            <textarea type="number" id="msg" name="book_pages"></textarea>
-          </div>
+          </p>
 
-          <div class="button">
-            <button id="confirm-form" type="submit">Confirm</button>
-            <button id="cancel-form" formmethod="dialog">Cancel</button>
+          <p>
+            <label for="pages">Total pages:</label>
+            <input type="number" id="pages" name="book_pages" />
+          </p>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
           </div>
         </form>
       </dialog>

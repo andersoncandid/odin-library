@@ -47,19 +47,17 @@ function displayBooks(library, booksContainer) {
   }
 }
 
-addBookToLibrary("Grande Sertão", "Guimarães Rosa", 700);
-addBookToLibrary("Elric Saga", "M. Murcook", 450);
-addBookToLibrary("Volta ao Mundo em 80 Dias", "Julio Verne", 450);
+// New book dialog
+const btnNewBook = document.getElementById("new-book");
+const bookDialog = document.querySelector(".dialog")
 
-const booksContainer = document.querySelector(".books-container");
-displayBooks(myLibrary, booksContainer);
-
-// New book modal
-const newBookBtn = document.getElementById("new-book-btn");
-const newBook = document.getElementById("new-book-modal");
-const confirmBtn = document.getElementById("confirm-form");
-const cancelBtn = document.getElementById("cancel-form");
-
-newBookBtn.addEventListener("click", () => {
-  newBook.showModal();
+btnNewBook.addEventListener("click", () => {
+  bookDialog.showModal();
 });
+
+// addBookToLibrary("Grande Sertão", "Guimarães Rosa", 700);
+// addBookToLibrary("Elric Saga", "M. Murcook", 450);
+// addBookToLibrary("Volta ao Mundo em 80 Dias", "Julio Verne", 450);
+//
+// const booksContainer = document.querySelector(".books-container");
+// displayBooks(myLibrary, booksContainer);
