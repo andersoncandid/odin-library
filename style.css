@@ -32,7 +32,7 @@ ul {
   --color-pale: #b1916e;
   --color-pale-darker: #423424;
   --color-orange: #f0b429;
-  --color-gray: #e2e8f0;
+  --color-brown-dark: #664400;
   --base-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -70,14 +70,14 @@ button:active {
 header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin: 32px 0;
   gap: 15px;
 }
 
 h1 {
   font-family: alexbrush-regular;
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--color-orange);
 }
 
@@ -175,22 +175,45 @@ textarea {
 }
 
 /* Books cards */
+.books-header {
+  margin: 1rem 0;
+  font-family: alexbrush-regular;
+  font-size: 3rem;
+  color: var(--color-orange);
+  text-align: center;
+}
+
+.books-cards {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
 .books-container {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 600px;
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
   gap: 30px;
 }
 
-.book {
-  padding: 30px 26px 30px 22px;
-  /* border-left: solid 5px var(--color-orange); */
+.card {
+  padding: 30px 26px 30px 16px;
+  border-left: solid 4px var(--color-orange);
   display: flex;
   flex-direction: column;
 }
 
-.book-title {
+.card-title {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+}
+
+.card-title ~ div {
+  color: var(--color-brown-dark);
+  margin-bottom: 4px;
 }
