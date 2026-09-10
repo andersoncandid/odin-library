@@ -11,7 +11,7 @@
     <header>
       <h1>Odin Library</h1>
       <button id="new-book">New Book</button>
-      <dialog class="dialog modal">
+      <dialog class="dialog">
         <form>
           <div class="form-header">
             <img src="/img/book.png" alt="Book Image" />
@@ -21,7 +21,7 @@
           <div class="form-content">
             <p>
               <label for="title">Book Title</label>
-              <input type="text" id="title" name="book_title" />
+              <input type="text" id="title" name="book_title" required />
             </p>
 
             <p>
@@ -49,8 +49,8 @@
           </div>
 
           <div class="form-footer">
-            <button id="cancel" formmethod="dialog">Cancel ✘</button>
-            <button id="confirmBtn" value="default">Confirm ✔</button>
+            <button id="close" formmethod="dialog">Close ✘</button>
+            <button id="confirmBtn" type="submit">Confirm ✔</button>
           </div>
         </form>
       </dialog>

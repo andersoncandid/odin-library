@@ -12,8 +12,8 @@ function Book(title, author, pages, comments) {
   this.status = "new"; // Default value
 }
 
-function addBookToLibrary(title, author, pages) {
-  const book = new Book(title, author, pages);
+function addBookToLibrary(title, author, pages, comments) {
+  const book = new Book(title, author, pages, comments);
   myLibrary.push(book);
 }
 
@@ -49,11 +49,31 @@ function displayBooks(library, booksContainer) {
 }
 
 // New book dialog
-const btnNewBook = document.getElementById("new-book");
-const bookDialog = document.querySelector(".dialog")
+const newBookButton = document.getElementById("new-book");
+const bookDialog = document.querySelector(".dialog");
+const confirmButton = document.getElementById("confirmBtn");
+const closeButton = document.getElementById("close");
 
-btnNewBook.addEventListener("click", () => {
+newBookButton.addEventListener("click", () => {
   bookDialog.showModal();
+});
+
+closeButton.addeventlistener("click", (event) => {
+  event.preventdefault();
+  bookDialog.close();
+});
+
+// Get input values and add to array
+confirmButton.addeventlistener("click", (event) => {
+  event.preventdefault();
+  const formInput = bookDialog.querySelectorAll("input, textarea");
+
+  const title = formInput.item(0).value;
+  const author = formInput.item(1).value;
+  const pages = formInput.item(2).value;
+  const comments = formInput.item(3).value;
+
+  addBookToLibrary(title, author, pages, comments);
 });
 
 // addBookToLibrary("Grande Sertão", "Guimarães Rosa", 700);
