@@ -2,11 +2,12 @@
 
 const myLibrary = [];
 
-function Book(title, author, pages) {
+function Book(title, author, pages, comments) {
   this.id = crypto.randomUUID();
   this.title = title;
   this.autor = author;
   this.pages = pages;
+  this.comments = comments;
   this.addDate = new Date();
   this.status = "new"; // Default value
 }
