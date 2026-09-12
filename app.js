@@ -7,9 +7,9 @@ function Book(title, author, pages, comments) {
   this.title = title;
   this.autor = author;
   this.pages = pages;
-  this.comments = comments;
   this.addDate = new Date();
   this.status = "new"; // Default value
+  this.comments = comments;
 }
 
 function addBookToLibrary(title, author, pages, comments) {
@@ -21,15 +21,20 @@ function addBookToLibrary(title, author, pages, comments) {
 function displayBooks(library, booksContainer) {
   for (const book of library) {
     const bookCard = document.createElement("div");
-    bookCard.classList.add("book");
+    bookCard.classList.add("card");
 
-    // Book info
+    // Skip display book ID
     for (bookProperty in book) {
       if (bookProperty === "id") {
         continue;
       }
 
+      // Don't create div for empty property
       const value = book[bookProperty];
+      if (value === "") {
+        continue;
+      }
+
       const bookInfo = document.createElement("div");
       bookInfo.classList.add(bookProperty);
 
@@ -48,37 +53,56 @@ function displayBooks(library, booksContainer) {
   }
 }
 
-// New book dialog
-const newBookButton = document.getElementById("new-book");
+// New Book popup
+// <form> inside <dialog> witdout send to server
 const bookDialog = document.querySelector(".dialog");
-const confirmButton = document.getElementById("confirmBtn");
-const closeButton = document.getElementById("close");
+const bookInputs = document.querySelectorAll("dialog input, textarea");
+const bookForm = document.querySelector("form");
+const feedback = document.querySelector(".feedback");
+const booksContainer = document.querySelector(".books-container");
 
-newBookButton.addEventListener("click", () => {
-  bookDialog.showModal();
+displayBooks(myLibrary, booksContainer);
+
+// Close the dialog modal by Esc key
+bookDialog.addEventListener("keydown", (event) => {
+  if (event.code === "Escape") {
+    feedback.style.display = "none";
+    bookDialog.close();
+  }
 });
 
-closeButton.addeventlistener("click", (event) => {
-  event.preventdefault();
-  bookDialog.close();
+document.addEventListener("click", (event) => {
+  const target = event.target;
+
+  switch (target.id) {
+    case "new-book-btn":
+      bookDialog.showModal();
+      break;
+    case "close-btn":
+      feedback.style.display = "none";
+      bookDialog.close();
+      break;
+    case "confirm-btn":
+      event.preventDefault();
+
+      const title = bookInputs.item(0).value;
+
+      // Add client-side validation
+      if (title === "") {
+        feedback.style.display = "block";
+        break;
+      }
+
+      const author = bookInputs.item(1).value;
+      const pages = bookInputs.item(2).value;
+      const comments = bookInputs.item(3).value;
+
+      // Add book entries to array and manualy clean the form
+      addBookToLibrary(title, author, pages, comments);
+      feedback.style.display = "none";
+      bookForm.reset();
+      bookDialog.close();
+      displayBooks(myLibrary, booksContainer);
+      break;
+  }
 });
-
-// Get input values and add to array
-confirmButton.addeventlistener("click", (event) => {
-  event.preventdefault();
-  const formInput = bookDialog.querySelectorAll("input, textarea");
-
-  const title = formInput.item(0).value;
-  const author = formInput.item(1).value;
-  const pages = formInput.item(2).value;
-  const comments = formInput.item(3).value;
-
-  addBookToLibrary(title, author, pages, comments);
-});
-
-// addBookToLibrary("Grande Sertão", "Guimarães Rosa", 700);
-// addBookToLibrary("Elric Saga", "M. Murcook", 450);
-// addBookToLibrary("Volta ao Mundo em 80 Dias", "Julio Verne", 450);
-//
-// const booksContainer = document.querySelector(".books-container");
-// displayBooks(myLibrary, booksContainer);

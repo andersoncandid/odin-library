@@ -33,6 +33,7 @@ ul {
   --color-pale-darker: #423424;
   --color-orange: #f0b429;
   --color-brown-dark: #664400;
+  --color-red: #fc2121;
   --base-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -85,7 +86,6 @@ h1 {
   translate: -50% -50%;
   text-align: center;
   min-width: 350px;
-  height: 60vh;
   border: 1px solid;
 }
 
@@ -129,18 +129,18 @@ p {
 label {
   display: block;
   font-family: inherit;
-  font-size: 100%;
+  font-size: 1.1rem;
   margin: 0;
   box-sizing: border-box;
   text-align: left;
   width: 100%;
-  padding: 5px;
+  padding: 5px 5px 5px 0;
   height: 30px;
 }
 
 input,
 textarea {
-  font: 0.8rem sans-serif;
+  font: 0.9rem sans-serif;
   padding: 4px;
   min-width: 300px;
   -moz-box-sizing: border-box;
@@ -156,30 +156,38 @@ textarea:focus {
 }
 
 textarea {
-  margin-bottom: 21px;
   vertical-align: top;
   height: 5em;
   resize: vertical;
 }
 
-/* Form footer */
-.form-footer {
-  padding: 1rem;
-  border-top: 1px solid #999;
+.dialog-buttons {
+  padding: 2rem 1rem 1rem 1rem;
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 46px;
+}
+
+#close-btn {
+  width: 80px;
+}
+
+#confirm-btn {
+  width: 140px;
+  color: green;
+}
+
+/* Validation feedback */
+.feedback {
+  margin: 2px 0 0 2px;
+  color: var(--color-red);
+  font-size: 0.7rem;
+  position: absolute;
+  z-index: 1;
+  display: none;
 }
 
 /* Books cards */
-.books-header {
-  margin: 1rem 0;
-  font-family: alexbrush-regular;
-  font-size: 3rem;
-  color: var(--color-orange);
-  text-align: center;
-}
-
 .books-cards {
   width: 100vw;
   height: 100vh;
@@ -198,19 +206,24 @@ textarea {
 }
 
 .card {
-  padding: 24px 20px 24px 16px;
+  padding: 10px 10px 10px 16px;
   border-left: solid 4px var(--color-orange);
   display: flex;
   flex-direction: column;
 }
 
-.card-title {
-  font-size: 1.1rem;
+.title {
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 6px;
+  color: var(--color-brown-dark);
+  text-decoration: underline;
 }
 
-.card-title ~ div {
-  color: var(--color-brown-dark);
+.title ~ div {
   margin-bottom: 4px;
+}
+
+.comments {
+  padding: 8px 0;
 }

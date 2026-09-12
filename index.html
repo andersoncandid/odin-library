@@ -10,8 +10,8 @@
   <body>
     <header>
       <h1>Odin Library</h1>
-      <button id="new-book">New Book</button>
-      <dialog class="dialog">
+      <button id="new-book-btn">New Book</button>
+      <dialog class="dialog" closedby="none">
         <form>
           <div class="form-header">
             <img src="/img/book.png" alt="Book Image" />
@@ -21,7 +21,8 @@
           <div class="form-content">
             <p>
               <label for="title">Book Title</label>
-              <input type="text" id="title" name="book_title" required />
+              <input type="text" id="title" name="book_title" />
+              <span class="feedback">Title is required</span>
             </p>
 
             <p>
@@ -47,50 +48,49 @@
               ></textarea>
             </p>
           </div>
-
-          <div class="form-footer">
-            <button id="close" formmethod="dialog">Close ✘</button>
-            <button id="confirmBtn" type="submit">Confirm ✔</button>
+          <div class="dialog-buttons">
+            <button id="close-btn" formmethod="dialog">Close ✘</button>
+            <button id="confirm-btn" type="submit">Confirm ✔</button>
           </div>
         </form>
       </dialog>
     </header>
     <section class="books">
-      <p class="books-header">Your Books</p>
+      <!-- <p class="books-header">Your Books</p> -->
       <div class="books-cards">
         <div class="books-container">
-          <div class="card">
-            <div class="card-title">Alto da Compadecida</div>
-            <div class="card-author"></div>
-            <div class="card-pages">Pages:</div>
-            <div class="card-added">Add:</div>
-            <div class="card-status">Status:</div>
-            <div class="card-comments">Comments:</div>
-          </div>
-          <div class="card">
-            <div class="card-title">Alto da Compadecida</div>
-            <div class="card-author"></div>
-            <div class="card-pages">Pages:</div>
-            <div class="card-added">Add:</div>
-            <div class="card-status">Status:</div>
-            <div class="card-comments">Comments:</div>
-          </div>
-          <div class="card">
-            <div class="card-title">Alto da Compadecida</div>
-            <div class="card-author"></div>
-            <div class="card-pages">Pages:</div>
-            <div class="card-added">Add:</div>
-            <div class="card-status">Status:</div>
-            <div class="card-comments">Comments:</div>
-          </div>
-          <div class="card">
-            <div class="card-title">Alto da Compadecida</div>
-            <div class="card-author"></div>
-            <div class="card-pages">Pages:</div>
-            <div class="card-added">Add:</div>
-            <div class="card-status">Status:</div>
-            <div class="card-comments">Comments:</div>
-          </div>
+          <!-- <div class="card"> -->
+          <!--   <div class="card-title">Alto da Compadecida</div> -->
+          <!--   <div class="card-author"></div> -->
+          <!--   <div class="card-pages">Pages:</div> -->
+          <!--   <div class="card-added">Add:</div> -->
+          <!--   <div class="card-status">Status:</div> -->
+          <!--   <div class="card-comments">Comments:</div> -->
+          <!-- </div> -->
+          <!-- <div class="card"> -->
+          <!--   <div class="card-title">Alto da Compadecida</div> -->
+          <!--   <div class="card-author"></div> -->
+          <!--   <div class="card-pages">Pages:</div> -->
+          <!--   <div class="card-added">Add:</div> -->
+          <!--   <div class="card-status">Status:</div> -->
+          <!--   <div class="card-comments">Comments:</div> -->
+          <!-- </div> -->
+          <!-- <div class="card"> -->
+          <!--   <div class="card-title">Alto da Compadecida</div> -->
+          <!--   <div class="card-author"></div> -->
+          <!--   <div class="card-pages">Pages:</div> -->
+          <!--   <div class="card-added">Add:</div> -->
+          <!--   <div class="card-status">Status:</div> -->
+          <!--   <div class="card-comments">Comments:</div> -->
+          <!-- </div> -->
+          <!-- <div class="card"> -->
+          <!--   <div class="card-title">Alto da Compadecida</div> -->
+          <!--   <div class="card-author"></div> -->
+          <!--   <div class="card-pages">Pages:</div> -->
+          <!--   <div class="card-added">Add:</div> -->
+          <!--   <div class="card-status">Status:</div> -->
+          <!--   <div class="card-comments">Comments:</div> -->
+          <!-- </div> -->
         </div>
       </div>
     </section>
