@@ -42,11 +42,7 @@ body {
   width: 100%;
 }
 
-button {
-  width: 100px;
-  height: 40px;
-  font-size: 1rem;
-  padding: 8px;
+header button {
   color: #fff;
   background-color: var(--color-pale);
   border: 0;
@@ -77,6 +73,13 @@ h1 {
   font-family: alexbrush-regular;
   font-size: 4rem;
   color: var(--color-orange);
+}
+
+#new-book-btn {
+  width: 120px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 /* New book dialog */
@@ -168,13 +171,11 @@ textarea {
   gap: 46px;
 }
 
-#close-btn {
-  width: 80px;
-}
-
-#confirm-btn {
-  width: 140px;
-  color: green;
+.dialog-buttons > button {
+  width: 100px;
+  height: 36px;
+  padding: 4px;
+  font-size: 1rem;
 }
 
 /* Validation feedback */
@@ -196,8 +197,9 @@ textarea {
 }
 
 .books-container {
-  max-width: 600px;
+  max-width: 900px;
   margin-top: 32px;
+  padding: 32px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -205,7 +207,27 @@ textarea {
   gap: 30px;
 }
 
-.card {
+.book-buttons {
+  margin-top: auto;
+  margin-bottom: 0 !important;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+
+.book-buttons > button {
+  width: 70px;
+  height: 28px;
+  padding-top: 2px;
+  font-size: 0.7rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: var(--base-box-shadow);
+}
+
+.book {
+  width: 250px;
   padding: 10px 10px 10px 16px;
   border-left: solid 4px var(--color-orange);
   display: flex;
